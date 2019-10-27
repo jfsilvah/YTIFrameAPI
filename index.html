@@ -5,13 +5,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Testing video player</title>
+    <title>Youtify</title>
+
+    <!-- link a css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- link a bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- link to css MATERIALIZE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-    <div id="player"></div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="logic.js"></script>
+
+<!-- navbar -->
+<div id="navBar">
+    <nav class="black">
+        <div class="nav-wrapper">
+            <div class="container">
+                <a href="#" class="brand-logo"><img src="./assets/images/nav_title_image.png" style="width: 150px; height: auto;margin-top: 2px;"></a>
+                <a href="#" class="sidenav-trigger" data-target="slide_out_1"><i class="material-icons">menu</i></a>
+                <ul class="hide-on-med-and-down right">
+                    <li class="active"><a>Home</a></li>
+                    <li><a>Playlists</a></li>
+                    <li><a>About us</a></li>
+                    <li>
+                        <a href="#" data-target="slide_out_2" class="sidenav-trigger show-on-large">
+                            <img id = "navBarUserImage" class="circle" src="./assets/images/placeholderUser.jpg" style="width: 35px; height: 35px;">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!-- Primary side bar -->
+<ul id="slide_out_1" class="sidenav">
+    <li><div class="user-view">
+    <div class="background">
+        <img src="./assets/images/sidenav_background_2.png">
+    </div>
+    <a href="#user"><img id = "sideBarUserImage1" class="circle" src="./assets/images/placeholderUser.jpg"></a>
+    <a href="#name"><span id = "sideBarUserName1" class="white-text name">User name</span></a>
+    <a href="#email"><span class="white-text email">test@gmail.com</span></a>
+    </div></li>
+    <li class="active"><a><i class="material-icons">home</i>Home</a></li>
+    <li><a><i class="material-icons">playlist_play</i>Playlists</a></li>
+    <li><a><i class="material-icons">info</i>About us</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="waves-effect" href="#!" id = "logout-button"><i class="material-icons">exit_to_app</i>Log Out</a></li>
+</ul>
+
+    <!-- Secondary side bar -->
+    <ul id="slide_out_2" class="sidenav">
+        <li><div class="user-view">
+          <div class="background">
+            <img src="./assets/images/sidenav_background_2.png">
+          </div>
+          <a href="#user"><img id = "sideBarUserImage2" class="circle" src="./assets/images/placeholderUser.jpg"></a>
+          <a href="#name"><span id = "sideBarUserName2" class="white-text name">User name</span></a>
+          <a href="#email"><span class="white-text email">test@gmail.com</span></a>
+        </div></li>
+        <li><a class="waves-effect" href="" id = "logout-button"><i class="material-icons">exit_to_app</i>Log Out</a></li>
+        <li><div class="divider"></div></li>
+    </ul>
+
+    <div class="istyle parallax div1">
+        <!-- <p id="Youtube">YouTube</p> -->
+        <section id="login-section">
+            <!-- <h2 id="covertitle">Play your favourite playlist on</h2> -->
+            <img src="./assets/images/nav_title_image.png" alt="titleImage" class="center-align" style="width: 600px; height: auto;">
+
+            <button id="login-button" type="button" class="center-align btn btn-secondary waves-effect waves-light btn btn-large" id="initbtn"><i class="fab fa-spotify"></i>GET STARTED</button>
+
+        </section>
+        <div id="loggedIn">
+            <h1>Logged in as <span id="display_name"></span></h1>
+            <div>
+                <img id="profile_image" src="" alt="">
+            </div>
+            <button id='get-playlists' class="btn btn-secondary">Get Playlists</button>
+        </div>
+    </div>
+    <div class="istyle" id="playlistSection">
+        
+        <div class="playsection">
+            <ul id="playlists">
+                <li><a class='playlist-btn href="#"'>TEST</a></li>
+                <li><a class='playlist-btn href="#"'>TEST</a></li>
+                <li><a class='playlist-btn href="#"'>TEST</a></li>
+                <li><a class='playlist-btn href="#"'>TEST</a></li>
+                <li><a class='playlist-btn href="#"'>TEST</a></li>
+                <li><a class='playlist-btn href="#"'>TEST</a></li>
+                <li><a class='playlist-btn href="#"'>TEST</a></li>
+                <li><a class='playlist-btn href="#"'>TEST</a></li>
+                <li><a class='playlist-btn href="#"'>TEST</a></li>
+                <li><a class='playlist-btn href="#"'>TEST</a></li>
+            </ul>
+        </div>
+        <div class="tracksection">
+            <ul id="tracks">
+                <li><a class='track-btn href="#"'>TEST</a></li>
+                <li><a class='track-btn href="#"'>TEST</a></li>
+                <li><a class='track-btn href="#"'>TEST</a></li>
+                <li><a class='track-btn href="#"'>TEST</a></li>
+                <li><a class='track-btn href="#"'>TEST</a></li>
+                <li><a class='track-btn href="#"'>TEST</a></li>
+                <li><a class='track-btn href="#"'>TEST</a></li>
+                <li><a class='track-btn href="#"'>TEST</a></li>
+                <li><a class='track-btn href="#"'>TEST</a></li>
+                <li><a class='track-btn href="#"'>TEST</a></li>
+            </ul>
+        </div>
+        <section id="carrousel">
+            <div class="promotitles">
+                <h4>Enjoy your favourite music!</h4>
+                <h5>Match your playlists on YouTube</h5>
+            </div>
+            <section class="w3-content w3-section " style="max-width:500px">
+                <img class="mySlides" src="./assets/images/Billie Eilish.jpg" style="width:300pt">
+                <img class="mySlides" src="./assets/images/Ricjy Martin.jpg" style="width:300pt">
+                <img class="mySlides" src="./assets/images/Maluma.jpg" style="width:300pt">
+            </section>
+            <button id="setYTPlaylist" type="button" class="btn btn-secondary" id="initbtn"> Youtufy IT!</button>
+        </section>
+        
+    </div>
+
+    <div class="istyle parallax" id="videosSection">
+
+    </div>
+    <div class="istyle" id="videosSection2">
+        <div id="player"></div>
+        <button id="backTrack"><i class="fas fa-backward"></i></button>
+        <h3 id="trackName">Youtube Song Name</h3>
+        <button id="nextTrack"><i class="fas fa-forward"></i></button>
+    </div>
+
+
+    <!-- link a jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-database.js"></script>
+    
+    <!-- link a js -->
+    <script type="text/javascript" src="assets/javascript/logic.js"></script>
+    <!-- link to js MATERIALIZE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://kit.fontawesome.com/99d86a1013.js"></script>
 </body>
 
 </html>
