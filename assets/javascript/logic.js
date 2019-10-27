@@ -116,7 +116,7 @@ function carousel() {
         // click del botón de login, cambiar sólo client_id
         $('#login-button').on('click', function () {
 
-            var client_id = 'e0e1b780bf694080b812b1b79f541a0a'; // Your client id
+            var client_id = "40645a5068f3446cbf5c45fc1fbe1f14";//'e0e1b780bf694080b812b1b79f541a0a'; // Your client id
             // var redirect_uri = 'http://127.0.0.1:5500/index.html'; // Your redirect uri
             var redirect_uri = window.location.href; //'http://127.0.0.1:5500/index.html'; // Your redirect uri
             var state = generateRandomString(16);
