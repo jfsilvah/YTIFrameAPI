@@ -283,6 +283,8 @@ function searchSongYT(trackId_par,artist,songName,actualKey){
 
 $(document).on("click", "#setYTPlaylist", function(event){
     if (videos.length > 0){
+        $("#videosSection").show();
+        $("#videosSection2").show();
         player.stopVideo();
         $("#player").show();
         actualVideo = 0;
@@ -344,6 +346,8 @@ $(document).ready(function () {
     $("#player").hide();
     $('.sidenav').sidenav();
     $('.scrollspy').scrollSpy();
+    $("#videosSection").hide();
+    $("#videosSection2").hide();
     $('#slide_out_1').sidenav({ edge: 'left' });
     $('#slide_out_2').sidenav({ edge: 'right' });
     carousel();
