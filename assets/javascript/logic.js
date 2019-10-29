@@ -336,7 +336,7 @@ $(document).on("click", "#nextTrack", function(event){
 $(document).on("click", "#logout-button", function(event){
     const url = 'https://www.spotify.com/logout/'
     const spotifyLogoutWindow = window.open(url, 'Spotify Logout', 'width=700,height=500,top=40,left=40')
-    setTimeout(function(){ spotifyLogoutWindow.close();window.location.href = 'index.html';}, 2000);
+    setTimeout(function(){ spotifyLogoutWindow.close();window.location.href = 'index.html';}, 3000);
 });
 
 $(document).ready(function () {
