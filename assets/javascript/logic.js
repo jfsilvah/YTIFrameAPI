@@ -282,7 +282,12 @@ function searchSongYT(trackId_par,artist,songName,actualKey){
 }
 
 $(document).on("click", "#setYTPlaylist", function(event){
-    if (videos.length > 0){
+    if (videosTemp.length > 0){
+        if(videos.length === videosTemp.length){
+            if (videos[videos.length-1].songName === videosTemp[videosTemp.length-1].songName){
+                return;
+            }
+        }
         videos = [];
         actualVideo = 0;
         for(var i=0; i<videosTemp.length; i++){
