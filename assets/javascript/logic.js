@@ -179,7 +179,6 @@ function carousel() {
                     'Authorization': 'Bearer ' + access_token
                 },
                 success: function (response) {
-                    videos = [];
                     trackId = 1;
 
                     response.items.forEach(function (item, index) {
@@ -261,7 +260,7 @@ function searchSongYT(trackId_par,artist,songName,actualKey){
                 videos[trackId_par].youtubeName = response.items[0].snippet.title;
                 videos[trackId_par].videoId = response.items[0].id.videoId;
                 if (trackId_par === 0) {
-					$("#trackName").text(videos[actualVideo].youtubeName);
+					$("#trackName").text(videos[0].youtubeName);
                     player.loadVideoById(videos[0].videoId);
                 }
             }
@@ -285,6 +284,8 @@ function searchSongYT(trackId_par,artist,songName,actualKey){
 $(document).on("click", "#setYTPlaylist", function(event){
     player.stopVideo();
     $("#player").show();
+    actualVideo = 0;
+    videos = [];
     for(var i=0; i<videos.length; i++){
         searchSongYT(i,videos[i].artist,videos[i].songName,0);
     }
