@@ -286,6 +286,7 @@ $(document).on("click", "#setYTPlaylist", function(event){
         $("#videosSection").show();
         $("#videosSection2").show();
         $("#trackName").show();
+        $("#trackName").text("Testing Page");
         $("#backtrack").show();
         $("#nexttrack").show();
         player.stopVideo();
