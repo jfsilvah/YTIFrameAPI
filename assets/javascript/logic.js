@@ -107,8 +107,8 @@ function carousel() {
                     $('#login-section').hide();
                     $('#navBar').show();
                     $('#playlistSection').show();
-                    $('#videosSection').show();
-                    $('#videosSection2').show();
+                    //$('#videosSection').show();
+                    //$('#videosSection2').show();
                 }
             });
         }
@@ -285,10 +285,6 @@ $(document).on("click", "#setYTPlaylist", function(event){
     if (videos.length > 0){
         $("#videosSection").show();
         $("#videosSection2").show();
-        $("#trackName").show();
-        $("#trackName").text("Testing Page");
-        $("#backtrack").show();
-        $("#nexttrack").show();
         player.stopVideo();
         $("#player").show();
         actualVideo = 0;
@@ -348,9 +344,6 @@ $(document).ready(function () {
     firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     $("#player").hide();
-    $("#trackName").hide();
-    $("#backtrack").hide();
-    $("#nexttrack").hide();
     $("#videosSection").hide();
     $("#videosSection2").hide();
     $('.sidenav').sidenav();
