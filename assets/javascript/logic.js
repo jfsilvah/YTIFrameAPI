@@ -285,6 +285,9 @@ $(document).on("click", "#setYTPlaylist", function(event){
     if (videos.length > 0){
         $("#videosSection").show();
         $("#videosSection2").show();
+        $("#trackName").show();
+        $("#backtrack").show();
+        $("#nexttrack").show();
         player.stopVideo();
         $("#player").show();
         actualVideo = 0;
@@ -344,10 +347,13 @@ $(document).ready(function () {
     firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     $("#player").hide();
-    $('.sidenav').sidenav();
-    $('.scrollspy').scrollSpy();
+    $("#trackName").hide();
+    $("#backtrack").hide();
+    $("#nexttrack").hide();
     $("#videosSection").hide();
     $("#videosSection2").hide();
+    $('.sidenav').sidenav();
+    $('.scrollspy').scrollSpy();
     $('#slide_out_1').sidenav({ edge: 'left' });
     $('#slide_out_2').sidenav({ edge: 'right' });
     carousel();
