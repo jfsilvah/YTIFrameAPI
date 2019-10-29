@@ -10,7 +10,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 var connectionsRef = database.ref("/api_keys");
-var videos = [];
+var videos = [], videosTemp = [];
 var tempVideo = {trackId: 0,
                  videoId: " ",
                  artist: " ",
@@ -180,7 +180,7 @@ function carousel() {
                 },
                 success: function (response) {
                     trackId = 1;
-
+                    videosTemp = [];
                     response.items.forEach(function (item, index) {
                         tempVideo = {};
                         var li = $("<li>");
@@ -195,7 +195,7 @@ function carousel() {
                         tempVideo.songName = response.items[index].track.name;
                         tempVideo.videoId = "";
                         tempVideo.youtubeName ="";
-                        videos.push(tempVideo);
+                        videosTemp.push(tempVideo);
                         trackId++;
                         li.append(pl);
                         $('#tracks').append(li);
@@ -283,12 +283,15 @@ function searchSongYT(trackId_par,artist,songName,actualKey){
 
 $(document).on("click", "#setYTPlaylist", function(event){
     if (videos.length > 0){
+        videos = [];
+        actualVideo = 0;
+        for(var i=0; i<videosTemp.length; i++){
+            videos.push(videosTemp[i]);
+        }
         $("#videosSection").show();
         $("#videosSection2").show();
         player.stopVideo();
         $("#player").show();
-        actualVideo = 0;
-        videos = [];
         for(var i=0; i<videos.length; i++){
             searchSongYT(i,videos[i].artist,videos[i].songName,0);
         }
