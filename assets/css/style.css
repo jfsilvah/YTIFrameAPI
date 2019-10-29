@@ -164,6 +164,11 @@ section {
 
 }
 #videosSection2 {
-    background-color: grey;
+    background-color: black;
+}
+
+#trackName{
+    font-size: 2vw;
+    color: white;
 }
 
