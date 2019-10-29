@@ -1,4 +1,11 @@
-
+body{
+    background-image: url(https://wallpaperaccess.com/full/856965.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: black;
+    background-size: cover;
+}
 
 .istyle {
     display: flex;
@@ -33,6 +40,7 @@ div:nth-child(4) {
     background-size: cover;
     background-attachment: fixed;
     height: 500px;
+    text-align: center;
     
 }
 div:nth-child(5) {
@@ -78,7 +86,7 @@ div:nth-child(5) {
     position: absolute;
     left: 36%;
     top: 700px;
-
+    text-align: center;
 }
 section {
     position: relative;
@@ -96,21 +104,21 @@ section {
 
 .playsection {
     position: relative;
-    right: 30%;
+    right: 20%;
     overflow: scroll;
-    height: 200pt;
+    height: 250pt;
     color: white;
-    width: 60pt;
+    width: 20%;
     text-align: center;
     padding: 1%;
 }
 .tracksection {
     position: relative;
-    left: 30%;
+    left: 20%;
     overflow: scroll;
-    height: 200pt;
+    height: 250pt;
     color: white;
-    width: 100pt;
+    width: 20%;
     text-align: center;
     top: 1%;
     
@@ -118,17 +126,22 @@ section {
 .mySlides {
     display:none;
 }
-.w3-section {
+/* .w3-section {
     max-width: 400pt;
     position: relative;
     left: -1%;
+} */
+
+.w3-section{
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#setYTPlaylist {
+/* #setYTPlaylist {
     position: relative;
     left: 33%;
     margin-top: 4%;
-}
+} */
 
 .promotitles {
     text-align: center;
@@ -142,3 +155,15 @@ section {
 .playlist-btn:hover, .track-btn:hover {
     text-decoration: underline;
 }
+#videosSection {
+
+    background-image: url("../images/picshow.jpg");
+    background-size: cover;   
+    background-attachment: fixed;
+    height: 650px;
+
+}
+#videosSection2 {
+    background-color: grey;
+}
+

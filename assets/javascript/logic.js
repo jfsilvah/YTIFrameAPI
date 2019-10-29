@@ -20,6 +20,8 @@ var player, iframe, tag, firstScriptTag, trackId, apiKeys;
 var actualVideo = 0, myIndex = 0;
 var userImage;
 var userName;
+var userEmail;
+var userFollowers;
 
 database.ref("/api_keys").on("value", function(snapshot) {
     apiKeys = JSON.parse(snapshot.val());
@@ -76,7 +78,7 @@ function carousel() {
     // con este if se sabe si hubo algún problema de autenticación
     if (access_token && (state == null || state !== storedState)) {
         alert('There was an error during the authentication');
-    } 
+    }
     else {
         localStorage.removeItem(stateKey);
         // con este if se sabe si se está autenticado correctamente
@@ -89,9 +91,15 @@ function carousel() {
                 },
                 success: function (response) {
                     userName = response.display_name
+                    userEmail = response.email;
+                    userFollowers = response.followers.total;
                     $('#sideBarUserName1').text(userName);
                     $('#sideBarUserName2').text(userName);
-                    userImage = response.images[0].url
+                    $('#sideBarUserEmail1').text(userEmail);
+					$('#sideBarUserEmail2').text(userEmail);
+					$('#sideBarUserFollowers1').text("Followers: "+userFollowers);
+					$('#sideBarUserFollowers2').text("Followers: "+userFollowers);
+                    userImage = response.images[0].url;
                     $('#navBarUserImage').attr('src', userImage);
                     $('#sideBarUserImage1').attr('src', userImage);
                     $('#sideBarUserImage2').attr('src', userImage);
@@ -103,7 +111,7 @@ function carousel() {
                     $('#videosSection2').show();
                 }
             });
-        } 
+        }
         else {
             $('#login-section').show();
             $('#navBar').hide();
@@ -173,7 +181,7 @@ function carousel() {
                 success: function (response) {
                     videos = [];
                     trackId = 1;
-                    
+
                     response.items.forEach(function (item, index) {
                         tempVideo = {};
                         var li = $("<li>");
@@ -253,6 +261,7 @@ function searchSongYT(trackId_par,artist,songName,actualKey){
                 videos[trackId_par].youtubeName = response.items[0].snippet.title;
                 videos[trackId_par].videoId = response.items[0].id.videoId;
                 if (trackId_par === 0) {
+					$("#trackName").text(videos[actualVideo].youtubeName);
                     player.loadVideoById(videos[0].videoId);
                 }
             }
@@ -312,8 +321,8 @@ $(document).on("click", "#nextTrack", function(event){
 });
 
 $(document).on("click", "#logout-button", function(event){
-    const url = 'https://www.spotify.com/logout/'                                                                                                                                                                                                                                                                               
-    const spotifyLogoutWindow = window.open(url, 'Spotify Logout', 'width=700,height=500,top=40,left=40')                                                                                                
+    const url = 'https://www.spotify.com/logout/'
+    const spotifyLogoutWindow = window.open(url, 'Spotify Logout', 'width=700,height=500,top=40,left=40')
     setTimeout(function(){ spotifyLogoutWindow.close();window.location.href = 'index.html';}, 2000);
 });
 
@@ -331,6 +340,7 @@ $(document).ready(function () {
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     $("#player").hide();
     $('.sidenav').sidenav();
+    $('.scrollspy').scrollSpy();
     $('#slide_out_1').sidenav({ edge: 'left' });
     $('#slide_out_2').sidenav({ edge: 'right' });
     carousel();

@@ -24,14 +24,14 @@
     <nav class="black">
         <div class="nav-wrapper">
             <div class="container">
-                <a href="#" class="brand-logo"><img src="./assets/images/nav_title_image.png" style="width: 150px; height: auto;margin-top: 2px;"></a>
-                <a href="#" class="sidenav-trigger" data-target="slide_out_1"><i class="material-icons">menu</i></a>
+                <a class="brand-logo"><img src="./assets/images/nav_title_image.png" style="width: 150px; height: auto;margin-top: 2px;"></a>
+                <a class="sidenav-trigger" data-target="slide_out_1"><i class="material-icons">menu</i></a>
                 <ul class="hide-on-med-and-down right">
-                    <li class="active"><a>Home</a></li>
-                    <li><a>Playlists</a></li>
-                    <li><a>About us</a></li>
+                    <li class="active" href="#loggedIn"><a>Home</a></li>
+                    <li><a href="#playlists">Choose your playlist</a></li>
+                    <li><a href="#videosSection2">Youtube it</a></li>
                     <li>
-                        <a href="#" data-target="slide_out_2" class="sidenav-trigger show-on-large">
+                        <a data-target="slide_out_2" class="sidenav-trigger show-on-large">
                             <img id = "navBarUserImage" class="circle" src="./assets/images/placeholderUser.jpg" style="width: 35px; height: 35px;">
                         </a>
                     </li>
@@ -42,81 +42,88 @@
 </div>
 
 <!-- Primary side bar -->
-<ul id="slide_out_1" class="sidenav">
+<ul id="slide_out_1" class="sidenav black">
     <li><div class="user-view">
     <div class="background">
-        <img src="./assets/images/sidenav_background_2.png">
+        <img src="./assets/images/DJ.jpg">
     </div>
     <a href="#user"><img id = "sideBarUserImage1" class="circle" src="./assets/images/placeholderUser.jpg"></a>
     <a href="#name"><span id = "sideBarUserName1" class="white-text name">User name</span></a>
-    <a href="#email"><span class="white-text email">test@gmail.com</span></a>
+    <a href="#email"><span id = "sideBarUserEmail1" class="white-text email">test@gmail.com</span></a>
+    <a href="#email"><span id = "sideBarUserFollowers1" class="white-text followers"></span></a>
     </div></li>
-    <li class="active"><a><i class="material-icons">home</i>Home</a></li>
-    <li><a><i class="material-icons">playlist_play</i>Playlists</a></li>
-    <li><a><i class="material-icons">info</i>About us</a></li>
+    <li class="active"><a href="#loggedIn" class="waves-effect" style="color: #61A2E6;"><i class="material-icons" style="color: #61A2E6;">home</i>Home</a></li>
+    <li><a href="#playlists" class="waves-effect" style="color: #61A2E6;"><i class="material-icons" style="color: #61A2E6;">playlist_add_check</i>Choose your playlist</a></li>
+    <li><a href="#videosSection2" class="waves-effect" style="color: #61A2E6;"><i class="material-icons" style="color: #61A2E6;">playlist_play</i>Youtube it</a></li>
     <li><div class="divider"></div></li>
-    <li><a class="waves-effect" href="#!" id = "logout-button"><i class="material-icons">exit_to_app</i>Log Out</a></li>
+    <li><a class="waves-effect" href="#!" id = "logout-button" style="color: #61A2E6;"><i class="material-icons" style="color: #61A2E6;">exit_to_app</i>Log Out</a></li>
 </ul>
 
     <!-- Secondary side bar -->
-    <ul id="slide_out_2" class="sidenav">
+    <ul id="slide_out_2" class="sidenav black">
         <li><div class="user-view">
           <div class="background">
-            <img src="./assets/images/sidenav_background_2.png">
+            <img src="./assets/images/DJ.jpg">
           </div>
           <a href="#user"><img id = "sideBarUserImage2" class="circle" src="./assets/images/placeholderUser.jpg"></a>
           <a href="#name"><span id = "sideBarUserName2" class="white-text name">User name</span></a>
-          <a href="#email"><span class="white-text email">test@gmail.com</span></a>
+          <a href="#email"><span id = "sideBarUserEmail2" class="white-text email">test@gmail.com</span></a>
+          <a href="#followers"><span id = "sideBarUserFollowers2" class="white-text followers">Followers: undefined</span></a>
         </div></li>
-        <li><a class="waves-effect" href="" id = "logout-button"><i class="material-icons">exit_to_app</i>Log Out</a></li>
+        <li><a class="waves-effect waves-color-green" href="" id = "logout-button" style="color: #61A2E6;"><i class="material-icons" style="color: #61A2E6;">exit_to_app</i>Log Out</a></li>
         <li><div class="divider"></div></li>
     </ul>
+
+    
+    
 
     <div class="istyle parallax div1">
         <!-- <p id="Youtube">YouTube</p> -->
         <section id="login-section">
             <!-- <h2 id="covertitle">Play your favourite playlist on</h2> -->
-            <img src="./assets/images/nav_title_image.png" alt="titleImage" class="center-align" style="width: 600px; height: auto;">
-
-            <button id="login-button" type="button" class="center-align btn btn-secondary waves-effect waves-light btn btn-large" id="initbtn"><i class="fab fa-spotify"></i>GET STARTED</button>
-
+            <img src="./assets/images/nav_title_image.png" alt="titleImage" class="center-align" style="width: 600px; height: auto; margin-bottom: 30px;">
+            <br>
+            <button id="login-button" type="button" class="center-align btn btn-secondary waves-effect waves-light btn btn-large" id="initbtn" style="width: 250px; height: 80px;margin-top: 30px;"><i class="fab fa-spotify"></i> GET STARTED</button>
+    
         </section>
-        <div id="loggedIn">
-            <h1>Logged in as <span id="display_name"></span></h1>
+        <div id="loggedIn" class="scrollspy">
+            <!-- <h1>Logged in as <span id="display_name"></span></h1> -->
             <div>
                 <img id="profile_image" src="" alt="">
             </div>
-            <button id='get-playlists' class="btn btn-secondary">Get Playlists</button>
+            <button id='get-playlists' class="center-align btn btn-secondary waves-effect waves-light btn btn-large" style="width: 250px; height: 80px;">Get Playlists</button>
         </div>
     </div>
-    <div class="istyle" id="playlistSection">
+    <div class="istyle scrollspy" id="playlistSection">
         
         <div class="playsection">
-            <ul id="playlists">
-                <li><a class='playlist-btn href="#"'>TEST</a></li>
-                <li><a class='playlist-btn href="#"'>TEST</a></li>
-                <li><a class='playlist-btn href="#"'>TEST</a></li>
-                <li><a class='playlist-btn href="#"'>TEST</a></li>
-                <li><a class='playlist-btn href="#"'>TEST</a></li>
-                <li><a class='playlist-btn href="#"'>TEST</a></li>
-                <li><a class='playlist-btn href="#"'>TEST</a></li>
-                <li><a class='playlist-btn href="#"'>TEST</a></li>
-                <li><a class='playlist-btn href="#"'>TEST</a></li>
-                <li><a class='playlist-btn href="#"'>TEST</a></li>
+            <h1 style="font-size: 16px;">Playlists: </h1>
+            <ul id="playlists" class="scrollspy">
+                <li><a class='playlist-btn href="#"'>...</a></li>
+                <li><a class='playlist-btn href="#"'>...</a></li>
+                <li><a class='playlist-btn href="#"'>...</a></li>
+                <li><a class='playlist-btn href="#"'>...</a></li>
+                <li><a class='playlist-btn href="#"'>...</a></li>
+                <li><a class='playlist-btn href="#"'>...</a></li>
+                <li><a class='playlist-btn href="#"'>...</a></li>
+                <li><a class='playlist-btn href="#"'>...</a></li>
+                <li><a class='playlist-btn href="#"'>...</a></li>
+                <li><a class='playlist-btn href="#"'>...</a></li>
             </ul>
         </div>
         <div class="tracksection">
+            <h1 style="font-size: 16px;">Tracks:</h1>
             <ul id="tracks">
-                <li><a class='track-btn href="#"'>TEST</a></li>
-                <li><a class='track-btn href="#"'>TEST</a></li>
-                <li><a class='track-btn href="#"'>TEST</a></li>
-                <li><a class='track-btn href="#"'>TEST</a></li>
-                <li><a class='track-btn href="#"'>TEST</a></li>
-                <li><a class='track-btn href="#"'>TEST</a></li>
-                <li><a class='track-btn href="#"'>TEST</a></li>
-                <li><a class='track-btn href="#"'>TEST</a></li>
-                <li><a class='track-btn href="#"'>TEST</a></li>
-                <li><a class='track-btn href="#"'>TEST</a></li>
+                <li><a class='track-btn href="#"'>...</a></li>
+                <li><a class='track-btn href="#"'>...</a></li>
+                <li><a class='track-btn href="#"'>...</a></li>
+                <li><a class='track-btn href="#"'>...</a></li>
+                <li><a class='track-btn href="#"'>...</a></li>
+                <li><a class='track-btn href="#"'>...</a></li>
+                <li><a class='track-btn href="#"'>...</a></li>
+                <li><a class='track-btn href="#"'>...</a></li>
+                <li><a class='track-btn href="#"'>...</a></li>
+                <li><a class='track-btn href="#"'>...</a></li>
             </ul>
         </div>
         <section id="carrousel">
@@ -124,12 +131,12 @@
                 <h4>Enjoy your favourite music!</h4>
                 <h5>Match your playlists on YouTube</h5>
             </div>
-            <section class="w3-content w3-section " style="max-width:500px">
-                <img class="mySlides" src="./assets/images/Billie Eilish.jpg" style="width:300pt">
-                <img class="mySlides" src="./assets/images/Ricjy Martin.jpg" style="width:300pt">
-                <img class="mySlides" src="./assets/images/Maluma.jpg" style="width:300pt">
+            <section class="w3-content w3-section " style="max-width:500px; margin-left: 15%;">
+                <img class="mySlides" src="./assets/images/Billie Eilish.jpg" style="width:200pt">
+                <img class="mySlides" src="./assets/images/Ricjy Martin.jpg" style="width:200pt">
+                <img class="mySlides" src="./assets/images/Maluma.jpg" style="width:200pt">
             </section>
-            <button id="setYTPlaylist" type="button" class="btn btn-secondary" id="initbtn"> Youtufy IT!</button>
+            <button id="setYTPlaylist" type="button" class="center-align btn btn-secondary waves-effect waves-light btn btn-large" id="initbtn" style="width: 200px; height: 60px; margin-top: 20px;"> Youtufy IT!</button>
         </section>
         
     </div>
@@ -137,7 +144,7 @@
     <div class="istyle parallax" id="videosSection">
 
     </div>
-    <div class="istyle" id="videosSection2">
+    <div class="istyle scrollspy" id="videosSection2">
         <div id="player"></div>
         <button id="backTrack"><i class="fas fa-backward"></i></button>
         <h3 id="trackName">Youtube Song Name</h3>
