@@ -112,6 +112,7 @@ function carousel() {
                 }
             });
         }
+
         else {
             $('#login-section').show();
             $('#navBar').hide();
